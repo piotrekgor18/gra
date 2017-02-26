@@ -4,7 +4,7 @@
 #include "item.h"
 #include "inventory.h"
 
-
+// proba do pulla
 
 int main()
 {
