@@ -5,7 +5,6 @@
 #include "inventory.h"
 
 
-//dupa
 int main()
 {
 	sf::RenderWindow oknoAplikacji(sf::VideoMode(800, 600), "Najlepsza gierka");
