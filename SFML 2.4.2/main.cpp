@@ -18,8 +18,9 @@ int main()
 	bar.setTexture(pasek);
 	bar.setPosition(103, 450);
 	float timer = 10;
-
-
+	 
+	bool eq = 0;
+	
 	//TLO
 	Texture tekstura;
 	tekstura.loadFromFile("tlo.jpg");
@@ -33,7 +34,7 @@ int main()
 	Item ladder(0, 0, 0, "ladder", "items/ladder.png");
 	Item shield(0, 0, 0, "shield", "items/shield.png");
 
-
+	//INVENTORY
 	Texture inv_texture;
 	inv_texture.loadFromFile("texture.jpg");
 	Sprite inv_sprite;
@@ -56,25 +57,47 @@ int main()
 			if (zdarzenie.type == sf::Event::KeyPressed && zdarzenie.key.code == sf::Keyboard::Escape)
 				oknoAplikacji.close();
 
-			pl1.move();
+			//DODAJ DO EQ
+			if (zdarzenie.type == sf::Event::KeyReleased && zdarzenie.key.code == sf::Keyboard::E)
+			{
 
+				if (eq == 0)
+					eq = 1;
+				else
+					eq = 0;
+			}
 
+			if (eq)
+			{
+				if (zdarzenie.type == sf::Event::KeyReleased && zdarzenie.key.code == sf::Keyboard::R)
+					inv.add(rod);
+				if (zdarzenie.type == sf::Event::KeyReleased && zdarzenie.key.code == sf::Keyboard::S)
+					inv.add(shield);
+				if (zdarzenie.type == sf::Event::KeyReleased && zdarzenie.key.code == sf::Keyboard::L)
+					inv.add(ladder);
+			}
+			
+			else
+				pl1.move();
+			
 		}
 
 		oknoAplikacji.draw(tlo);
 		oknoAplikacji.draw(pl1.getImage());
 
+		//oknoAplikacji.draw(rod.getSprite());
 
-
-
-
-		inv_sprite.setTextureRect(sf::IntRect(65, 0, 32 * (inv.getIndex() + 1), 42));
+		inv_sprite.setTextureRect(sf::IntRect(65, 0, 32 * (inv.getSize()), 42));
 		inv_sprite.setPosition(sf::Vector2f(100, 100));
 
-		oknoAplikacji.draw(inv_sprite);
+		if (eq)
+		{
+			oknoAplikacji.draw(inv_sprite);
+			inv.view(oknoAplikacji);
+		}
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-			inv.add(rod);
+	
+
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 		{
@@ -89,6 +112,7 @@ int main()
 			oknoAplikacji.draw(bar);
 			timer = clock.getElapsedTime().asSeconds();// rysowanie i pobioeranie czasu na nast obieg
 		}
+	
 		oknoAplikacji.display();
 
 	}
