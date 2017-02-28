@@ -1,6 +1,6 @@
 #include "inventory.h"
 
-Inventory::Inventory() :index(0), size(6)
+Inventory::Inventory() :index(0), size(6), position(105,110)
 {
 	tab = new Item[size];
 }
@@ -13,6 +13,7 @@ void Inventory::add(Item tmp)
 	{
 		tab[index] = tmp;
 		index++;
+		std::cout << "ITEM ADDED" << std::endl;
 	}
 	else
 		std::cout << "INVENTORY FULL" << std::endl;
@@ -32,3 +33,18 @@ int Inventory::getIndex()
 {
 	return index;
 }
+
+
+void Inventory::view(sf::RenderWindow & window)
+{
+	for (int i = 0; i < index; i++)
+	{
+
+		tab[i].setItemPosition(position + Vector2f(i * 32,0));
+		window.draw(tab[i].getSprite());
+		
+	}
+			
+}
+
+

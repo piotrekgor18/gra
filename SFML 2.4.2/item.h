@@ -24,6 +24,8 @@ public:
 	Item(float, float, float, string, string);
 	~Item();
 
+	void setItemPosition(sf::Vector2f);
+
 
 	//GETTERY
 	Sprite getSprite();

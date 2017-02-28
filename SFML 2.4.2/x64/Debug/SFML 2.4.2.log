@@ -1,10 +1,4 @@
-﻿  item.cpp
-  Generating Code...
-  Compiling...
-  main.cpp
-c:\users\piotrek\documents\sfml\sfml 2.4.2\sfml 2.4.2\main.cpp(48): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  player.cpp
-  SFML 2.4.2.vcxproj -> C:\Users\Piotrek\Documents\SFML\SFML 2.4.2\x64\Debug\SFML 2.4.2.exe
-  SFML 2.4.2.vcxproj -> C:\Users\Piotrek\Documents\SFML\SFML 2.4.2\x64\Debug\SFML 2.4.2.pdb (Partial PDB)
+﻿  main.cpp
+c:\users\piotrek\source\repos\wspolny_projekt\sfml 2.4.2\main.cpp(49): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  SFML 2.4.2.vcxproj -> C:\Users\Piotrek\Source\Repos\Wspolny_Projekt\x64\Debug\SFML 2.4.2.exe
+  SFML 2.4.2.vcxproj -> C:\Users\Piotrek\Source\Repos\Wspolny_Projekt\x64\Debug\SFML 2.4.2.pdb (Partial PDB)
